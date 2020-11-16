@@ -1,0 +1,17 @@
+li {
+    display: inline;
+    width: 100%;
+}
+
+a {
+    color: silver;
+    text-decoration: none;
+    /* when styling, the first 0 applies to the top and bottom, the second to left and right */
+    padding: 0 10px;
+    flex: 0vmax;
+}
+/* apply this style to an anchor when the user hovers over top of it */
+a:hover {
+    background-color: black;
+    color: white;
+}

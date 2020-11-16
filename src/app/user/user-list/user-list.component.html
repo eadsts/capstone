@@ -1,0 +1,32 @@
+<div class="h3">User List
+    <!-- placeholder puts the word search in the search box -->
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
+</div>
+<table [ngClass]="tableStyle">
+    <tr>
+        <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
+        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
+        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th>
+        <th>Password</th>
+        <th>Reviewer?</th>
+        <th>Admin?</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
+        
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.username}}</td>
+        <!-- add | masked  -->
+        <td>{{user.password }}</td>
+        <!-- function bool from bool-display.pipe.ts in french   | bool:"en" | bool:"en"-->
+        <td>{{user.isReviewer }}</td>
+        <td>{{user.isAdmin }}</td>
+        <td>
+            <a routerLink ="/users/edit/{{user.id}}">Edit | </a>
+            <a routerLink ="/users/detail/{{user.id}}">Details</a>
+        </td>
+    </tr>
+</table>
+

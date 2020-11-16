@@ -1,0 +1,8 @@
+<nav>
+    <ul>
+        <!-- this is the pseudo html tag from the selector from menuitem.component.ts -->
+        <!-- I want to do this for all menu items -->
+        <!-- and store all the data from mnu to an array [menu] in our child component-->
+       <app-menuitem [menu]="mnu" *ngFor="let mnu of menus"></app-menuitem>
+    </ul>
+</nav>
