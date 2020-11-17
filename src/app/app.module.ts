@@ -17,6 +17,8 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
     UserCreateComponent,
     UserEditComponent,
     VendorListComponent,
-    VendorDetailComponent
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorEditComponent
   ],
   imports: [
     BrowserModule,
