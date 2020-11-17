@@ -12,29 +12,27 @@
         <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
         <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th> -->
         <th>Id</th>
+        <th>Vendor Name</th>
         <th>Part Number</th>
         <th>Name</th>
         <th>Price</th>
         <th>Unit</th>
         <th>Image</th>
-        <!-- <th>VendorId</th>
-        <th>Vendor</th> -->
         <th>Actions</th>
     </tr>
     <tr *ngFor="let product of products">
         <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
         
         <td>{{product.id}}</td>
+        <td>{{product.vendor.name}}</td>
         <td>{{product.partNbr}}</td>
         <td>{{product.name}}</td>
-        <td>{{product.price}}</td>
+        <td>{{product.price | currency}}</td>
         <td>{{product.unit}}</td>
         <td>{{product.photoPath }}</td>
-        <!-- <td>{{product.vendorId }}</td>
-        <td>{{product.vendor}}</td> -->
         <td>
-            <a routerLink ="/vendors/edit/{{product.id}}">Edit | </a>
-            <a routerLink ="/vendors/detail/{{product.id}}">Details </a>
+            <a routerLink ="/products/edit/{{product.id}}">Edit | </a>
+            <a routerLink ="/products/detail/{{product.id}}">Details </a>
         </td>
     </tr>
 </table>

@@ -9,7 +9,7 @@ import { Product } from '../product.class';
 })
 export class ProductListComponent implements OnInit {
 
-    product: Product[] = [];
+    products: Product[] = [];
     // searchCriteria: string = "";
     // sortCriteria: string = "lastName";
     // ascSequence: boolean = true;
