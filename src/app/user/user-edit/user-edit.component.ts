@@ -4,30 +4,30 @@ import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'app-user-edit',
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.css']
 })
 
-export class UserDetailComponent implements OnInit {
+export class UserEditComponent implements OnInit {
 
+  //create a variable user which is undefined
   user: User;
 
   constructor(
     private usersvc: UserService,
     private route: ActivatedRoute,
     private router: Router
-  
   ) { }
 
-  delete(): void {
+  save(): void {
     console.log(this.user);
-    this.usersvc.remove(this.user).subscribe(
+    this.usersvc.change(this.user).subscribe(
       res => {
         console.debug("User Removed:", res);
         this.router.navigateByUrl("/users/list");
       },
-      err => { console.error("Error removing user: ", err); }
+      err => { console.error("Error editing user: ", err); }
     );
   }
 
@@ -42,4 +42,3 @@ export class UserDetailComponent implements OnInit {
     );
   }
 }
-

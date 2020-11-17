@@ -1,0 +1,67 @@
+<div class="angular-component">
+    <h3> Create New User</h3>
+    <table *ngIf="user" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="user.id" disabled type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td>
+                <input [(ngModel)]="user.firstName" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+             <td>
+                 <input [(ngModel)]="user.lastName" type="text" size="15">
+             </td>
+        
+        </tr>
+        <tr>
+            <th>Username</th>
+             <td>
+                 <input [(ngModel)]="user.username" type="text" size="15">
+             </td>
+        </tr>
+        <tr>
+            <th>Password</th>
+             <td>
+                 <input [(ngModel)]="user.password" type="password" size="15">
+             </td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+             <td>
+                 <input [(ngModel)]="user.phone" type="text" size="15">
+             </td>
+        </tr>
+        <tr>
+            <th>Email</th>
+             <td>
+                 <input [(ngModel)]="user.email" type="text" size="25">
+             </td>
+        </tr>
+        <tr>
+            <th>Reviewer</th>
+             <td>
+                 <input [(ngModel)]="user.isReviewer" type="checkbox" size="15">
+             </td>
+        </tr>
+        <tr>
+            
+            <th>Admin</th>
+             <td>
+                 <input [(ngModel)]="user.isAdmin" type="checkbox" size="15">
+             </td>
+        </tr>
+        <tr>
+            <td calspan="2">
+                <button (click)="save()" class="btn btn-primary">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
