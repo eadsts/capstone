@@ -13,7 +13,8 @@ export class MenuComponent implements OnInit {
      new Menu("Home","/home"),
      new Menu("About","/about"),
      new Menu("Users", "/users/list"),
-     new Menu("Vendors", "/vendors/list")
+     new Menu("Vendors", "/vendors/list"),
+     new Menu("Products", "/products/list")
     ];
   
     constructor() { }
