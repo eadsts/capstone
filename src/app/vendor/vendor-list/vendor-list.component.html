@@ -1,0 +1,43 @@
+<div class="h3">Vendor List
+    <!-- <a routerLink ="/users/create/{{user.id}}">Create</a> -->
+   
+    <!-- placeholder puts the word search in the search box -->
+    <a routerLink="/vendors/create">Create</a>
+    <!-- <input [(ngModel)]="searchCriteria" type="text" placeholder="Search"> -->
+</div>
+
+<table [ngClass]="tableStyle">
+    <tr>
+        <!-- <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
+        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
+        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th> -->
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let vendor of vendors">
+        <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
+        
+        <td>{{vendor.id}}</td>
+        <td>{{vendor.code}}</td>
+        <td>{{vendor.name}}</td>
+        <td>{{vendor.address}}</td>
+        <td>{{vendor.city}}</td>
+        <td>{{vendor.state}}</td>
+        <td>{{vendor.zip}}</td>
+        <td>{{vendor.phone}}</td>
+        <td>{{vendor.email}}</td>
+        <td>
+            <a routerLink ="/vendors/edit/{{vendor.id}}">Edit | </a>
+            <a routerLink ="/vendors/detail/{{vendor.id}}">Details </a>
+        </td>
+    </tr>
+</table>
+
