@@ -1,0 +1,42 @@
+<div class="h3">Request List
+    <!-- <a routerLink ="/users/create/{{user.id}}">Create</a> -->
+   
+    <!-- placeholder puts the word search in the search box -->
+    <a routerLink="/requests/create">Create</a>
+    <!-- <input [(ngModel)]="searchCriteria" type="text" placeholder="Search"> -->
+</div>
+
+<table [ngClass]="tableStyle">
+    <tr>
+        <!-- <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
+        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
+        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th> -->
+        <th>Id</th>
+        <!-- <th>User Name</th> -->
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Rejection Reason</th>
+        <th>Delivery Mode</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let request of requests">
+        <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
+        
+        <td>{{request.id}}</td>
+        <!-- <td>{{request.user.name}}</td> -->
+        <td>{{request.description}}</td>
+        <td>{{request.justification}}</td>
+        <td>{{request.rejectionReason}}</td>
+        <td>{{request.deliveryMode}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>
+            <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
+            <a routerLink ="/requests/detail/{{request.id}}">Details </a>
+        </td>
+    </tr>
+</table>
+
+

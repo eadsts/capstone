@@ -40,7 +40,7 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     let id = +this.route.snapshot.params.id;
 
-    //read list of vendors
+    //read list of vendors, if successful, display in list
     this.vendorsvc.list().subscribe(
         res => { 
         console.debug(res); 
@@ -49,7 +49,7 @@ export class ProductEditComponent implements OnInit {
       err => { console.error(err); }
     );
 
-    //read list of products
+    //read list of products by id to edit one product
     this.productsvc.get(id).subscribe(
       res => { 
       console.debug(res);

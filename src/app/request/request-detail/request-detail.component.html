@@ -1,0 +1,60 @@
+<div class="angular-component">
+    <h3> Request Detail</h3>
+    <table *ngIf="request" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="request.id" disabled type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="request.description" disabled type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Justification</th>
+             <td>
+                 <input [(ngModel)]="request.justification" disabled type="text" size="15">
+             </td>
+        
+        </tr>
+        <tr>
+            <th>Rejection Reason</th>
+             <td>
+                 <input [(ngModel)]="request.rejectionReason" disabled type="text" size="15">
+             </td>
+        </tr>
+        <tr>
+            <th>Delivery Mode</th>
+             <td>
+                 <input [(ngModel)]="request.deliveryMode" disabled type="text" size="15">
+             </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+             <td>
+                 <input [(ngModel)]="request.status" disabled type="text" size="15">
+             </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+             <td>
+                 <input [(ngModel)]="request.total" disabled type="number" size="25">
+             </td>
+        </tr>
+        <!-- <tr>
+            <th>UserId</th>
+             <td>
+                 <input [(ngModel)]="request.userId" disabled type="checkbox" size="15">
+             </td>
+        </tr> -->
+        <tr>
+            <td calspan="2">
+                <button (click)="delete()" class="btn btn-primary">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
