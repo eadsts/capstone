@@ -33,6 +33,9 @@ import { UserSearchPipe } from './user/user-search.pipe';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe';
 import { RequestlinesComponent } from './request/requestlines/requestlines.component';
 import { ReviewListComponent } from './request/review-list/review-list.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { ReviewItemComponent } from './request/review-item/review-item.component';
 
 
 @NgModule({
@@ -64,7 +67,10 @@ import { ReviewListComponent } from './request/review-list/review-list.component
     UserSearchPipe,
     VendorSearchPipe,
     RequestlinesComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    RequestlineCreateComponent,
+    RequestlineEditComponent,
+    ReviewItemComponent
   ],
   imports: [
     BrowserModule,

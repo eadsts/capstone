@@ -5,7 +5,7 @@
     <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
 </div>
 
-<table [ngClass]="tableStyle">
+<table *ngIf="vendors" [ngClass]="tableStyle">
     <tr>
         <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
         <th><a (click)="sortColumn('code')" class="btn btn-link">Code</a></th>
