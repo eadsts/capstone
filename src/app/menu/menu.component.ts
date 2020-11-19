@@ -15,14 +15,15 @@ export class MenuComponent implements OnInit {
      new Menu("Users", "/users/list"),
      new Menu("Vendors", "/vendors/list"),
      new Menu("Products", "/products/list"),
-     new Menu("Requests", "/requests/list")
+     new Menu("Requests", "/requests/list"),
+    //  new Menu("Review", "requests/list"),
+     new Menu("Login", "/users/login")
     ];
   
     constructor() { }
   
     ngOnInit(): void {
     }
-  
   }
 
  

@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="angular-component">
     <h3> Request Edit</h3>
     <table *ngIf="request" class="table table-sm">
@@ -44,12 +45,12 @@
                  <input [(ngModel)]="request.total" type="number" size="25">
              </td>
         </tr>
-        <!-- <tr>
-            <th>UserId</th>
+        <tr>
+            <th>User</th>
              <td>
-                 <input [(ngModel)]="request.userId" type="text" size="15">
+                 <input [(ngModel)]="request.userId" disabled type="text" size="15">
              </td>
-        </tr> -->
+        </tr>
         <tr>
             <td calspan="2">
                 <button (click)="save()" class="btn btn-primary">Save</button>

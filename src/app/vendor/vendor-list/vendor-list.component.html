@@ -1,29 +1,24 @@
+<app-menu></app-menu>
 <div class="h3">Vendor List
-    <!-- <a routerLink ="/users/create/{{user.id}}">Create</a> -->
-   
     <!-- placeholder puts the word search in the search box -->
     <a routerLink="/vendors/create">Create</a>
-    <!-- <input [(ngModel)]="searchCriteria" type="text" placeholder="Search"> -->
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
 </div>
 
 <table [ngClass]="tableStyle">
     <tr>
-        <!-- <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
-        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
-        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th> -->
-        <th>Id</th>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
-        <th>Phone</th>
-        <th>Email</th>
+        <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
+        <th><a (click)="sortColumn('code')" class="btn btn-link">Code</a></th>
+        <th><a (click)="sortColumn('name')" class="btn btn-link">Name</a></th>
+        <th><a (click)="sortColumn('address')" class="btn btn-link">Address</a></th>
+        <th><a (click)="sortColumn('city')" class="btn btn-link">City</a></th>
+        <th><a (click)="sortColumn('state')" class="btn btn-link">State</a></th>
+        <th><a (click)="sortColumn('zip')" class="btn btn-link">Zip</a></th>
+        <th><a (click)="sortColumn('phone')" class="btn btn-link">Phone</a></th>
+        <th><a (click)="sortColumn('email')" class="btn btn-link">Email</a></th>
         <th>Actions</th>
     </tr>
-    <tr *ngFor="let vendor of vendors">
-        <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
+    <tr *ngFor="let vendor of vendors | vendorSearch:searchCriteria | sort:sortCriteria:ascSequence">
         
         <td>{{vendor.id}}</td>
         <td>{{vendor.code}}</td>

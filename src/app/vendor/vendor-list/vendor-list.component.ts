@@ -12,23 +12,31 @@ export class VendorListComponent implements OnInit {
 
   //stores all vendors in an array
   vendors: Vendor[] = [];
-  // searchCriteria: string = "";
-    // sortCriteria: string = "Name";
-    // ascSequence: boolean = true;
+  searchCriteria: string = "";
+  sortCriteria: string = "Name";
+  ascSequence: boolean = true;
   tableStyle: string = "table table-sm";
 
   constructor(
     private vendorsvc: VendorService
   ) { }
 
-  ngOnInit(): void {
-    this.vendorsvc.list().subscribe(
-      res => { console.log(res);
-      this.vendors = res as Vendor[];
-    },
-    err => { console.error(err); }
-    );
+  sortColumn(column: string): void {
+    if(column == this.sortCriteria) {
+      this.ascSequence = !this.ascSequence;
+      return;
+    }
+    this.sortCriteria = column;
+    this.ascSequence = true;
   }
 
+ngOnInit(): void {
+  this.vendorsvc.list().subscribe(
+    res => { console.log(res);
+    this.vendors = res as Vendor[];
+    console.log("all vendors", this.vendors);
+  },
+  err => { console.error(err); }
+  );
 }
-
+}

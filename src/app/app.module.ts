@@ -27,6 +27,11 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { SortPipe } from './core/sort.pipe';
+import { UserSearchPipe } from './user/user-search.pipe';
+import { VendorSearchPipe } from './vendor/vendor-search.pipe';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +56,11 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
     RequestListComponent,
     RequestDetailComponent,
     RequestCreateComponent,
-    RequestEditComponent
+    RequestEditComponent,
+    UserLoginComponent,
+    SortPipe,
+    UserSearchPipe,
+    VendorSearchPipe
   ],
   imports: [
     BrowserModule,

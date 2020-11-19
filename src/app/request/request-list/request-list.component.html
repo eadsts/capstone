@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="h3">Request List
     <!-- <a routerLink ="/users/create/{{user.id}}">Create</a> -->
    
@@ -19,6 +20,7 @@
         <th>Delivery Mode</th>
         <th>Status</th>
         <th>Total</th>
+        <th>User</th>
         <th>Actions</th>
     </tr>
     <tr *ngFor="let request of requests">
@@ -32,6 +34,7 @@
         <td>{{request.deliveryMode}}</td>
         <td>{{request.status}}</td>
         <td>{{request.total}}</td>
+        <td>{{request.user.username}}</td>
         <td>
             <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
             <a routerLink ="/requests/detail/{{request.id}}">Details </a>

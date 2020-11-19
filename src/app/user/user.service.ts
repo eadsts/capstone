@@ -13,6 +13,12 @@ export class UserService {
   constructor(
     private http: HttpClient
   ) { }
+   
+  //login when we are calling asynchronous AJAX calls outside the server we 
+  //have to return it in Observable
+  login(username: string, password: string): Observable<User> {
+    return this.http.get(`${baseurl}/${username}/${password}`) as Observable<User>;
+  }
 
   //gets all users
   list(): Observable<User[]> {

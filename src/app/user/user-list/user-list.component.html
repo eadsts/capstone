@@ -1,30 +1,28 @@
+<app-menu></app-menu>
 <div class="h3">User List
-    <!-- <a routerLink ="/users/create/{{user.id}}">Create</a> -->
-   
-    <!-- placeholder puts the word search in the search box -->
     <a routerLink="/users/create">Create</a>
-    <!-- <input [(ngModel)]="searchCriteria" type="text" placeholder="Search"> -->
+     <!-- placeholder puts the word search in the search box -->
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
 </div>
 
 <table [ngClass]="tableStyle">
     <tr>
-        <!-- <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
-        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
-        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th> -->
-        <th>Id</th>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Reviewer?</th>
-        <th>Admin?</th>
+        <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
+        <th><a (click)="sortColumn('firstName')" class="btn btn-link">First Name</a></th>
+        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Last Name</a></th>
+        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th>
+        <th><a (click)="sortColumn('phone')" class="btn btn-link">Phone</a></th>
+        <th><a (click)="sortColumn('email')" class="btn btn-link">Email</a></th>
+        <th><a (click)="sortColumn('isReviewer')" class="btn btn-link">Reviewer?</a></th>
+        <th><a (click)="sortColumn('isAdmin')" class="btn btn-link">Admin?</a></th>
         <th>Actions</th>
     </tr>
-    <tr *ngFor="let user of users">
-        <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
+    <tr *ngFor="let user of users | userSearch:searchCriteria| sort:sortCriteria:ascSequence">
+    
         
         <td>{{user.id}}</td>
-        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
         <td>{{user.username}}</td>
         <!-- add | masked  -->
         <!-- <td>{{user.password }}</td> -->
@@ -39,4 +37,3 @@
         </td>
     </tr>
 </table>
-

@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="angular-component">
     <h3> Request Detail</h3>
     <table *ngIf="request" class="table table-sm">
@@ -44,12 +45,12 @@
                  <input [(ngModel)]="request.total" disabled type="number" size="25">
              </td>
         </tr>
-        <!-- <tr>
+        <tr>
             <th>UserId</th>
              <td>
-                 <input [(ngModel)]="request.userId" disabled type="checkbox" size="15">
+                 <input [(ngModel)]="request.userId" disabled type="text" size="15">
              </td>
-        </tr> -->
+        </tr>
         <tr>
             <td calspan="2">
                 <button (click)="delete()" class="btn btn-primary">Delete</button>
