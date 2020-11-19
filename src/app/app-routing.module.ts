@@ -20,6 +20,7 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { RequestlinesComponent } from './request/requestlines/requestlines.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: "requests/create", component: RequestCreateComponent },
   { path: "requests/edit/:id", component: RequestEditComponent },  
   { path: "users/login", component: UserLoginComponent },
+  { path: "requests/requestlines", component: RequestlinesComponent },
   { path: "**", component: E404Component }
  
 ];

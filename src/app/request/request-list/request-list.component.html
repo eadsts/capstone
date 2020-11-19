@@ -37,7 +37,8 @@
         <td>{{request.user.username}}</td>
         <td>
             <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
-            <a routerLink ="/requests/detail/{{request.id}}">Details </a>
+            <a routerLink ="/requests/detail/{{request.id}}">Details | </a>
+            <a routerLink ="/requestlines{{request.id}}">Lines </a>
         </td>
     </tr>
 </table>

@@ -31,6 +31,8 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { SortPipe } from './core/sort.pipe';
 import { UserSearchPipe } from './user/user-search.pipe';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe';
+import { RequestlinesComponent } from './request/requestlines/requestlines.component';
+import { ReviewListComponent } from './request/review-list/review-list.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { VendorSearchPipe } from './vendor/vendor-search.pipe';
     UserLoginComponent,
     SortPipe,
     UserSearchPipe,
-    VendorSearchPipe
+    VendorSearchPipe,
+    RequestlinesComponent,
+    ReviewListComponent
   ],
   imports: [
     BrowserModule,

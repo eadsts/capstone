@@ -21,10 +21,13 @@ export class RequestCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private sysSvc: SystemService
+   
   ) { }
 
   save(): void {
-    console.log(this.request);
+    console.log("Saving request: ", this.request);
+    this.request.userId= this.user.id;
+    this.request.user = null;
     this.requestsvc.create(this.request).subscribe(
       res => {
         console.debug("Request Added:", res);
