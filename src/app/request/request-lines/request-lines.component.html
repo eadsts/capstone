@@ -1,7 +1,6 @@
 <app-menu></app-menu>
 <div class="h3">Request Lines
-    <!-- <a routerLink ="/users/create/{{user.id}}">Create</a> -->
-   
+    <!-- create makes a new line item -->
     <a routerLink="/requestline/create">Create</a>
 </div>
 
@@ -12,7 +11,7 @@
         <th>Description</th>
         <th>Status</th>
         <th>Total</th>
-        <th>Username</th>
+        <th>User</th>
         <th>Actions</th>
     </tr>
     <tr *ngFor="let request of requests">
@@ -23,8 +22,7 @@
         <td>{{request.total}}</td>
         <td>{{request.username}}</td>
         <td>
-            <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
-            <a routerLink ="/requests/detail/{{request.id}}">Details </a>
+            <a routerLink ="/requests/review/{{request.id}}">Review</a>
         </td>
     </tr>
 </table>
@@ -57,5 +55,3 @@
     <button (click)="submitForReview()" class="btn btn-primary">Review</button>
 
 </div>
-
-

@@ -7,7 +7,7 @@ export class Requestline {
     productId: number = 0;
     quantity: number = 1;
 
-    request: Request = null;
+    // request: Request = null;
     product: Product = null;
 
     constructor() {}

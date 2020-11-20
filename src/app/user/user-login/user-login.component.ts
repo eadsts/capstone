@@ -29,19 +29,19 @@ export class UserLoginComponent implements OnInit {
     this.sysSvc.loggedInUser = null; //clear out logged in user
     
   }
-
+  //need to be logged in for request create and request review
   login() {
     console.log("in login method... uname="+this.username+", pwd="+this.password);
     this.usersvc.login(this.username, this.password).subscribe(
       res => {console.log("login()...", res);
       this.user = res as User;
       this.sysSvc.loggedInUser = this.user;
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/users/list')
     },
     err => {
       console.log("error...", err);
       //login error.. display in message
-      this.message = "invalid login";
+      this.message = "User Name or Password is incorrect";
     }
     );
   }

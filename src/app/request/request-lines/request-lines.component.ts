@@ -1,20 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { RequestService } from '../request.service';
-import { Requestline } from 'src/app/requestline/requestline.class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from '../request.class';
 import { RequestlineService } from 'src/app/requestline/requestline.service';
+import { Requestline } from 'src/app/requestline/requestline.class';
+import { Product } from 'src/app/product/product.class';
 
 @Component({
-  selector: 'app-requestlines',
-  templateUrl: './requestlines.component.html',
-  styleUrls: ['./requestlines.component.css']
+  selector: 'app-request-lines',
+  templateUrl: './request-lines.component.html',
+  styleUrls: ['./request-lines.component.css']
 })
+
 export class RequestLinesComponent implements OnInit {
-  
+
   request: Request;
   requestlines: Requestline[] = [];
-  linesforRequest = [];
+  rId: number = 0;
+  requestId: number;
+  requestline: RequestLinesComponent;
+  products: string = "";
+  product: Product[] = [];
+  productId: number;
+  quantity: number;
 
   constructor(
     private requestsvc: RequestService,
@@ -24,29 +32,30 @@ export class RequestLinesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //1-get request for id passed in url
-    let id = +this.route.snapshot.params.id;
-    this.requestsvc.get(id).subscribe(
-      res => { console.log(res); 
-        this.request = res as Request;
-      },
-      err => { console.error(err); }
-    );
-      //2-get all request lines for the above request
-      //get all request lines in an array
-      //do a for loop and get request lines that match the request
-    // this.requestlinesvc.get(id).subscribe(
-    //   for(let rl of requestlines) {
-    //     if(requestId == requestlines.request.id) {
-    //       push(requestId).linesforRequest[]
-    //   }
-    // }
-    //   // res => { console.log(res);
-      
-    // },
-    //   err => { console.error(err); }
-    // );
-
+    this.refresh;
   }
 
+  submitForReview(): void { 
+  }
+
+  refresh(): void {
+    let id = this.route.snapshot.params.id;
+    this.requestsvc.get(id).subscribe (
+      res => { this.createUserName(res); console.debug(res); this.request = res; },
+      err => { console.error(err);}
+
+    );
+  }
+
+  createUserName(request: Request): void {
+    request.username = `${request.user.lastName}, ${request.user.firstName}`;
+  }
+
+  delete(id: number): void {
+    console.debug(`Deleting line id ${id}`);
+    this.requestlinesvc.remove(id).subscribe(
+      res => { this.refresh(); },
+      err => { console.error(err); }
+    );
+  }
 }
