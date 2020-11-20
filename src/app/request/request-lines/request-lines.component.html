@@ -5,17 +5,16 @@
 </div>
 
 <div>
-<table *ngIf="requestlines" [ngClass]="tableStyle">
+<table *ngIf="request" [ngClass]="tableStyle">
     <tr> 
         <th>Id</th>
         <th>Description</th>
         <th>Status</th>
-        <th>Total</th>
+        <th>Subtotal</th>
         <th>User</th>
         <th>Actions</th>
     </tr>
-    <tr *ngFor="let request of requests">
-       
+    <tr>
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.status}}</td>
@@ -27,27 +26,29 @@
     </tr>
 </table>
 </div>
-
 <div>
-    <table *ngIf="requestlines" [ngClass]="tableStyle">
+    <p></p>
+</div>
+<div>
+    <table *ngIf="request.requestLines" [ngClass]="tableStyle">
         <tr>
             <th>Id</th>
             <th>Product</th>
             <th>Quantity</th>
             <th>Price</th>
-            <th>LineTotal</th>
+            <!-- <th>LineTotal</th> -->
             <th>Actions</th>
         </tr>
-        <tr *ngFor="let request of requests">
+        <tr *ngFor="let line of request.requestLines">
            
-            <td>{{request.id}}</td>
-            <td>{{request.product}}</td>
-            <td>{{request.quantity}}</td>
-            <td>{{request.price}}</td>
-            <td>{{request.total}}</td>
+            <td>{{line.id}}</td>
+            <td>{{line.product.name}}</td>
+            <td>{{line.quantity}}</td>
+            <td>{{line.product.price}}</td>
+            <!-- <td>{{line.total}}</td> -->
             <td>
-                <a routerLink ="/requestlines/edit/{{request.id}}">Edit | </a>
-                <a routerLink ="/requests/detail/{{request.id}}">Delete </a>
+                <a routerLink ="/requestlines/edit/{{line.id}}">Edit | </a>
+                <a routerLink ="/requests/detail/{{line.id}}">Delete </a>
             </td>
         </tr>
         

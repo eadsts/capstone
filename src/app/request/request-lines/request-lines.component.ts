@@ -15,14 +15,9 @@ import { Product } from 'src/app/product/product.class';
 export class RequestLinesComponent implements OnInit {
 
   request: Request;
-  requestlines: Requestline[] = [];
   rId: number = 0;
   requestId: number;
-  requestline: RequestLinesComponent;
-  products: string = "";
-  product: Product[] = [];
-  productId: number;
-  quantity: number;
+
 
   constructor(
     private requestsvc: RequestService,
@@ -32,7 +27,7 @@ export class RequestLinesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.refresh;
+    this.refresh();
   }
 
   submitForReview(): void { 
@@ -43,7 +38,6 @@ export class RequestLinesComponent implements OnInit {
     this.requestsvc.get(id).subscribe (
       res => { this.createUserName(res); console.debug(res); this.request = res; },
       err => { console.error(err);}
-
     );
   }
 
