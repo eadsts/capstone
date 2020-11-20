@@ -45,9 +45,9 @@ export class RequestLinesComponent implements OnInit {
     request.username = `${request.user.lastName}, ${request.user.firstName}`;
   }
 
-  delete(id: number): void {
-    console.debug(`Deleting line id ${id}`);
-    this.requestlinesvc.remove(id).subscribe(
+  delete(line: Requestline): void {
+    console.debug(`Deleting line id ${line.id}`);
+    this.requestlinesvc.remove(line).subscribe(
       res => { this.refresh(); },
       err => { console.error(err); }
     );

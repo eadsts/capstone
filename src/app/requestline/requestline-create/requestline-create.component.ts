@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/product/product.service';
 import { RequestLinesComponent } from 'src/app/request/request-lines/request-lines.component';
 import { RequestlineService } from '../requestline.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Requestline } from '../requestline.class';
 
 @Component({
   selector: 'app-requestline-create',
@@ -12,17 +13,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RequestlineCreateComponent implements OnInit {
   rId: number = 0;
+  requestline: Requestline = new Requestline();
   requestId: number;
-  requestline: RequestLinesComponent;
-  requestlinesvc: RequestlineService;
-  prodsvc: ProductService;
   products: string = "";
   product: Product[] = [];
   productId: number;
 
   constructor(
-    private route: Router,
-    private router: ActivatedRoute
+    private router: Router,
+    private route: ActivatedRoute,
+    private requestlinesvc: RequestlineService
   ) { }
 
   save(): void {
@@ -30,7 +30,7 @@ export class RequestlineCreateComponent implements OnInit {
     this.requestline.productId = +this.requestline.productId;
     console.debug(this.requestline);
     this.requestlinesvc.create(this.requestline).subscribe(
-      res => { console.debug(res); this.router.navigateByUrl('/requests/lines/${this.rId}`);')},
+      res => { console.debug(res); this.router.navigateByUrl('/lines/${this.rId}`);')},
       err => { console.error(err); }
     )
   }
