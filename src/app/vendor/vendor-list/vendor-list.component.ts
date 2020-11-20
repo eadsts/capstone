@@ -13,7 +13,7 @@ export class VendorListComponent implements OnInit {
   //stores all vendors in an array
   vendors: Vendor[] = [];
   searchCriteria: string = "";
-  sortCriteria: string = "Name";
+  sortCriteria: string = "name";
   ascSequence: boolean = true;
   tableStyle: string = "table table-sm";
 

@@ -15,14 +15,14 @@ export class RequestlineCreateComponent implements OnInit {
   rId: number = 0;
   requestline: Requestline = new Requestline();
   requestId: number;
-  products: string = "";
   product: Product[] = [];
   productId: number;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private requestlinesvc: RequestlineService
+    private requestlinesvc: RequestlineService,
+    private prodsvc: ProductService
   ) { }
 
   save(): void {
@@ -38,7 +38,7 @@ export class RequestlineCreateComponent implements OnInit {
   ngOnInit(): void { 
     this.rId = this.route.snapshot.params.rid;
     this.prodsvc.list().subscribe(
-      res => { console.debug(res); this.products = res as Product[]; },
+      res => { console.debug(res); this.product = res as Product[]; },
       err => { console.error(err); }
     )
   }

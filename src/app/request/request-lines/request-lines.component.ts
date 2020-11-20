@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from '../request.class';
 import { RequestlineService } from 'src/app/requestline/requestline.service';
 import { Requestline } from 'src/app/requestline/requestline.class';
-import { Product } from 'src/app/product/product.class';
 
 @Component({
   selector: 'app-request-lines',

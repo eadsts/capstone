@@ -4,7 +4,6 @@ import { Requestline } from 'src/app/requestline/requestline.class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestlineService } from 'src/app/requestline/requestline.service';
 import { SystemService } from 'src/app/core/system.service';
-import { Console } from 'console';
 
 @Component({
   selector: 'app-review-list',
@@ -14,6 +13,7 @@ import { Console } from 'console';
 export class ReviewListComponent implements OnInit {
 
   request: Request;
+  requests: Request[] = [];
   requestlines: Requestline[] = [];
   linesforRequest = [];
   tableStyle: string = "table table-sm";
@@ -47,7 +47,7 @@ export class ReviewListComponent implements OnInit {
     this.requestsvc.allRequestsForReview(userid).subscribe(
       res => {
         console.debug("All request lines", res);
-        this.router.navigateByUrl("/requests/review");
+        this.requests = res;
       },
         err => { console.error("Error retrieving lines to review: ", err); }
     );
