@@ -31,7 +31,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { SortPipe } from './core/sort.pipe';
 import { UserSearchPipe } from './user/user-search.pipe';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe';
-import { RequestlinesComponent } from './request/requestlines/requestlines.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { ReviewListComponent } from './request/review-list/review-list.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
@@ -66,7 +66,7 @@ import { ReviewItemComponent } from './request/review-item/review-item.component
     SortPipe,
     UserSearchPipe,
     VendorSearchPipe,
-    RequestlinesComponent,
+    RequestLinesComponent,
     ReviewListComponent,
     RequestlineCreateComponent,
     RequestlineEditComponent,

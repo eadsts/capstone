@@ -6,7 +6,7 @@
 </div>
 
 <div>
-<table [ngClass]="tableStyle">
+<table *ngIf="requestlines" [ngClass]="tableStyle">
     <tr> 
         <th>Id</th>
         <th>Description</th>
@@ -31,7 +31,7 @@
 </div>
 
 <div>
-    <table [ngClass]="tableStyle">
+    <table *ngIf="requestlines" [ngClass]="tableStyle">
         <tr>
             <th>Id</th>
             <th>Product</th>
@@ -48,8 +48,8 @@
             <td>{{request.price}}</td>
             <td>{{request.total}}</td>
             <td>
-                <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
-                <a routerLink ="/requests/detail/{{request.id}}">Details </a>
+                <a routerLink ="/requestlines/edit/{{request.id}}">Edit | </a>
+                <a routerLink ="/requests/detail/{{request.id}}">Delete </a>
             </td>
         </tr>
         

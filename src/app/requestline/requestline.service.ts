@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Requestlines } from './requestline.class';
+import { Requestline } from './requestline.class';
 
 const baseurl: string ="http://localhost:62513/api/requestlines";
 
@@ -16,26 +16,26 @@ export class RequestlineService {
   constructor() { }
 
   //gets all requests
-  list(): Observable<Requestlines[]> {
-    return this.http.get(`${baseurl}`) as Observable<Requestlines[]>;
+  list(): Observable<Requestline[]> {
+    return this.http.get(`${baseurl}`) as Observable<Requestline[]>;
   }
   //gets single request by id
-  get(id: number): Observable<Requestlines> {
-    return this.http.get(`${baseurl}/${id}`) as Observable<Requestlines>;
+  get(id: number): Observable<Requestline> {
+    return this.http.get(`${baseurl}/${id}`) as Observable<Requestline>;
   }
   //inserts a request
-  create(requestlines: Requestlines): Observable<Requestlines> {
-    return this.http.post(`${baseurl}`, requestlines) as Observable<Requestlines>;
+  create(requestlines: Requestline): Observable<Requestline> {
+    return this.http.post(`${baseurl}`, requestlines) as Observable<Requestline>;
   }
 
   //updates a request
-  change(requestlines: Requestlines): Observable<any> {
+  change(requestlines: Requestline): Observable<any> {
     return this.http.put(`${baseurl}/${requestlines.id}`, requestlines) as Observable<any>;
   }
 
   //deletes a request
-  remove(requestlines: Requestlines): Observable<Requestlines> {
-    return this.http.delete(`${baseurl}/${requestlines.id}`) as Observable<Requestlines>;
+  remove(requestlines: Requestline): Observable<Requestline> {
+    return this.http.delete(`${baseurl}/${requestlines.id}`) as Observable<Requestline>;
   }
 
 }

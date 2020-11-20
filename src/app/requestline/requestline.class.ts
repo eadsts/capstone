@@ -1,8 +1,7 @@
 import { Product } from '../product/product.class';
 import { Request } from '../request/request.class';
-import { RequestlinesComponent } from "../request/requestlines/requestlines.component";
 
-export class Requestlines {
+export class Requestline {
     id: number = 0;
     requestId: number = 0;
     productId: number = 0;

@@ -20,7 +20,7 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
-import { RequestlinesComponent } from './request/requestlines/requestlines.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 
@@ -45,7 +45,7 @@ const routes: Routes = [
   { path: "requests/create", component: RequestCreateComponent },
   { path: "requests/edit/:id", component: RequestEditComponent },  
   { path: "users/login", component: UserLoginComponent },
-  { path: "requests/requestlines", component: RequestlinesComponent },
+  { path: "requests/lines", component: RequestLinesComponent },
   { path: "requestlines/create", component: RequestlineCreateComponent },
   { path: "requestlines/edit", component: RequestlineEditComponent },
   { path: "**", component: E404Component }

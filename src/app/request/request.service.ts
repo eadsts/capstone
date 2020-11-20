@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Request } from './request.class';
 import { Observable } from 'rxjs';
-import { User } from '../user/user.class'
 
 const baseurl: string ="http://localhost:62513/api/requests";
 

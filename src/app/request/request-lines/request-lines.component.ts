@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../request.service';
-import { Requestlines } from 'src/app/requestline/requestline.class';
+import { Requestline } from 'src/app/requestline/requestline.class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from '../request.class';
 import { RequestlineService } from 'src/app/requestline/requestline.service';
@@ -10,10 +10,10 @@ import { RequestlineService } from 'src/app/requestline/requestline.service';
   templateUrl: './requestlines.component.html',
   styleUrls: ['./requestlines.component.css']
 })
-export class RequestlinesComponent implements OnInit {
+export class RequestLinesComponent implements OnInit {
   
   request: Request;
-  requestlines: Requestlines[] = [];
+  requestlines: Requestline[] = [];
   linesforRequest = [];
 
   constructor(
