@@ -15,7 +15,7 @@ export class RequestlineCreateComponent implements OnInit {
   rId: number = 0;
   requestline: Requestline = new Requestline();
   requestId: number;
-  product: Product[] = [];
+  products: Product[] = [];
   productId: number;
 
   constructor(
@@ -39,7 +39,7 @@ export class RequestlineCreateComponent implements OnInit {
     this.rId = this.route.snapshot.params.id;
     this.requestline.requestId = +this.rId;
     this.prodsvc.list().subscribe(
-      res => { console.debug(res); this.product = res as Product[]; },
+      res => { console.debug(res); this.products = res as Product[]; },
       err => { console.error(err); }
     )
   }

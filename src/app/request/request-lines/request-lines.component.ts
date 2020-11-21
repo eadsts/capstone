@@ -16,8 +16,8 @@ export class RequestLinesComponent implements OnInit {
   request: Request;
   rId: number = 0;
   requestId: number;
-
-
+  tableStyle: string = "table table-sm";
+  
   constructor(
     private requestsvc: RequestService,
     private route: ActivatedRoute,
@@ -29,7 +29,15 @@ export class RequestLinesComponent implements OnInit {
     this.refresh();
   }
 
+  //needs to navigate to review-item.component.ts
   submitForReview(): void {
+    this.requestsvc.submitForReview(this.request.id, this.request).subscribe(
+      res => {
+        console.debug("Request to review:", res);
+        this.refresh();
+      },
+      err => { console.error("Error reviewing item: ", err); }
+    );
   }
 
   refresh(): void {
@@ -52,4 +60,8 @@ export class RequestLinesComponent implements OnInit {
       err => { console.error(err); }
     );
   }
+
+  // linetotal(): void {
+    
+  // }
 }

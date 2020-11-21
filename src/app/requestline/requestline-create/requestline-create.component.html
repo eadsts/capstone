@@ -1,5 +1,32 @@
-<p>requestline-create works!</p>
+
 <!-- need to display two columns with product and drop down
     box next to it
 and quantity and input box next to it
 and a SAve button -->
+<app-menu></app-menu>
+<div class="angular-component">
+    <h3> Create New Requestline</h3>
+    <table *ngIf="requestline" class="table table-sm">
+        <tr>
+            <th>Product</th>
+            <td>
+                <select [(ngModel)]="requestline.productId">
+                    <option *ngFor="let product of products" value={{product.id}}>{{product.name}}</option>
+                </select>
+                <!-- <input [(ngModel)]="line.product.name" type="text" size="10"> -->
+            </td>
+        </tr>
+        <tr>
+            <th>Quantity</th>
+            <td>
+                <input [(ngModel)]="quantity" type="text" size="25">
+            </td>
+        </tr>
+        <tr>
+            <td calspan="2">
+                <button (click)="save()" class="btn btn-primary">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>
+

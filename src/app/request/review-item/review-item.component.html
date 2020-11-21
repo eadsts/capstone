@@ -2,3 +2,34 @@
 <!-- this lists the items in review to approve or reject with approve and reject buttons
 if hit reject, need a text box that has a reason for rejection -->
 <!-- need *ngIf statement to make the reason for rejection box -->
+<app-menu></app-menu>
+<div *ngIf="request" class="h3">Request Lines
+    <!-- create makes a new line item -->
+    <a routerLink="/requestlines/create/{{request.id}}">Create</a>
+</div>
+
+<div>
+<table *ngIf="request" [ngClass]="tableStyle">
+    <tr> 
+        <th>Id</th>
+        <th>Username</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>User</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>{{request.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{request.description</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.username}}</td>
+        <td>
+            <button (click) ="approve()">Approve</button>
+            <button (click) ="reject()">Reject</button>
+        </td>
+    </tr>
+</table>
+</div>

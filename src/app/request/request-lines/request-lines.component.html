@@ -21,7 +21,7 @@
         <td>{{request.total}}</td>
         <td>{{request.username}}</td>
         <td>
-            <a routerLink ="/requests/review/{{request.id}}">Review</a>
+            <button (click)="submitForReview()" class="btn btn-primary">Review</button>
         </td>
     </tr>
 </table>
@@ -33,10 +33,10 @@
     <table *ngIf="request && request.requestLines" [ngClass]="tableStyle">
         <tr>
             <th>Id</th>
-            <!-- <th>Product</th> -->
+            <th>Product</th>
             <th>Quantity</th>
             <th>Price</th>
-            <!-- <th>LineTotal</th> -->
+            <th>LineTotal</th>
             <th>Actions</th>
         </tr>
         <tr *ngFor="let line of request.requestLines">
@@ -45,7 +45,7 @@
             <td>{{line.product.name}}</td>
             <td>{{line.quantity}}</td>
             <td>{{line.product.price}}</td>
-            <td>{{line.total}}</td>
+            <td>{{line.quantity}}</td>
             <td>
                 <a routerLink ="/requestlines/edit/{{line.id}}">Edit | </a>
                 <button (click) ="remove(line)">Delete </button>
@@ -53,6 +53,4 @@
         </tr>
         
     </table>
-    <button (click)="submitForReview()" class="btn btn-primary">Review</button>
-
 </div>
