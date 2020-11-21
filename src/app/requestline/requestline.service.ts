@@ -11,9 +11,8 @@ const baseurl: string ="http://localhost:62513/api/requestlines";
 
 export class RequestlineService {
 
-  private http: HttpClient;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   //gets all requests
   list(): Observable<Requestline[]> {
@@ -34,8 +33,8 @@ export class RequestlineService {
   }
 
   //deletes a request
-  remove(requestlines: Requestline): Observable<Requestline> {
-    return this.http.delete(`${baseurl}/${requestlines.id}`) as Observable<Requestline>;
+  remove(requestline: Requestline): Observable<Requestline> {
+    return this.http.delete(`${baseurl}/${requestline.id}`) as Observable<Requestline>;
   }
 
 }

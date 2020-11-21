@@ -21,7 +21,6 @@ export class RequestCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private sysSvc: SystemService
-   
   ) { }
 
   save(): void {
@@ -41,6 +40,6 @@ export class RequestCreateComponent implements OnInit {
     //get the logged in user
     this.user = this.sysSvc.loggedInUser;
     //set the logged in user in this.request
-    this.request.user = this.user;
+    this.request.userId = this.user.id;
   }
 }

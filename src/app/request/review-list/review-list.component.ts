@@ -4,6 +4,7 @@ import { Requestline } from 'src/app/requestline/requestline.class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestlineService } from 'src/app/requestline/requestline.service';
 import { SystemService } from 'src/app/core/system.service';
+import { Request } from '../request.class';
 
 @Component({
   selector: 'app-review-list',

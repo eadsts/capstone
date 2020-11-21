@@ -29,14 +29,14 @@ export class RequestLinesComponent implements OnInit {
     this.refresh();
   }
 
-  submitForReview(): void { 
+  submitForReview(): void {
   }
 
   refresh(): void {
     let id = this.route.snapshot.params.id;
-    this.requestsvc.get(id).subscribe (
-      res => { this.createUserName(res); console.debug(res); this.request = res; },
-      err => { console.error(err);}
+    this.requestsvc.get(id).subscribe(
+      res => { console.debug(res); this.request = res; },
+      err => { console.error(err); }
     );
   }
 
@@ -44,8 +44,9 @@ export class RequestLinesComponent implements OnInit {
     request.username = `${request.user.lastName}, ${request.user.firstName}`;
   }
 
-  delete(line: Requestline): void {
+  remove(line: Requestline): void {
     console.debug(`Deleting line id ${line.id}`);
+    line.product = null;
     this.requestlinesvc.remove(line).subscribe(
       res => { this.refresh(); },
       err => { console.error(err); }

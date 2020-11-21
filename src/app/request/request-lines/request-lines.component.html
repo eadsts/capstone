@@ -1,7 +1,7 @@
 <app-menu></app-menu>
-<div class="h3">Request Lines
+<div *ngIf="request" class="h3">Request Lines
     <!-- create makes a new line item -->
-    <a routerLink="/requestline/create">Create</a>
+    <a routerLink="/requestlines/create/{{request.id}}">Create</a>
 </div>
 
 <div>
@@ -30,10 +30,10 @@
     <p></p>
 </div>
 <div>
-    <table *ngIf="request" [ngClass]="tableStyle">
+    <table *ngIf="request && request.requestLines" [ngClass]="tableStyle">
         <tr>
             <th>Id</th>
-            <th>Product</th>
+            <!-- <th>Product</th> -->
             <th>Quantity</th>
             <th>Price</th>
             <!-- <th>LineTotal</th> -->
@@ -45,10 +45,10 @@
             <td>{{line.product.name}}</td>
             <td>{{line.quantity}}</td>
             <td>{{line.product.price}}</td>
-            <!-- <td>{{line.total}}</td> -->
+            <td>{{line.total}}</td>
             <td>
                 <a routerLink ="/requestlines/edit/{{line.id}}">Edit | </a>
-                <a routerLink ="/requests/detail/{{line}}">Delete </a>
+                <button (click) ="remove(line)">Delete </button>
             </td>
         </tr>
         
