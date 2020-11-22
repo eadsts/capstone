@@ -1,35 +1,54 @@
-<p>review-item works!</p>
+
 <!-- this lists the items in review to approve or reject with approve and reject buttons
 if hit reject, need a text box that has a reason for rejection -->
 <!-- need *ngIf statement to make the reason for rejection box -->
 <app-menu></app-menu>
-<div *ngIf="request" class="h3">Request Lines
-    <!-- create makes a new line item -->
-    <a routerLink="/requestlines/create/{{request.id}}">Create</a>
+<div *ngIf="request" class="h3">Request Line Review
+    
 </div>
 
 <div>
 <table *ngIf="request" [ngClass]="tableStyle">
     <tr> 
         <th>Id</th>
-        <th>Username</th>
         <th>Description</th>
         <th>Status</th>
-        <th>Price</th>
+        <th>Subtotal</th>
         <th>User</th>
-        <th>Actions</th>
     </tr>
     <tr>
         <td>{{request.id}}</td>
-        <td>{{user.username}}</td>
-        <td>{{request.description</td>
+        <td>{{request.description}}</td>
         <td>{{request.status}}</td>
         <td>{{request.total}}</td>
         <td>{{request.username}}</td>
-        <td>
-            <button (click) ="approve()">Approve</button>
-            <button (click) ="reject()">Reject</button>
-        </td>
     </tr>
 </table>
 </div>
+<div>
+    <p></p>
+</div>
+<div>
+    <table *ngIf="request && request.requestLines" [ngClass]="tableStyle">
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <!-- <th>LineTotal</th> -->
+        </tr>
+        <tr *ngFor="let line of request.requestLines">
+           
+            <td>{{line.id}}</td>
+            <td>{{line.product.name}}</td>
+            <td>{{line.quantity}}</td>
+            <td>{{line.product.price}}</td>
+            <!-- <td>{{line.total}}</td> -->
+        </tr> 
+    </table>
+</div>
+<td>
+    <button (click) ="approve()">Approve</button>
+    <button (click) ="reject()">Reject</button>
+    <input [(ngModel)]="request.rejectionreason" value="text" size="35">
+</td>

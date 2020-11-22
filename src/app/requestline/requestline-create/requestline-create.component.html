@@ -1,8 +1,5 @@
 
-<!-- need to display two columns with product and drop down
-    box next to it
-and quantity and input box next to it
-and a SAve button -->
+
 <app-menu></app-menu>
 <div class="angular-component">
     <h3> Create New Requestline</h3>
@@ -13,13 +10,12 @@ and a SAve button -->
                 <select [(ngModel)]="requestline.productId">
                     <option *ngFor="let product of products" value={{product.id}}>{{product.name}}</option>
                 </select>
-                <!-- <input [(ngModel)]="line.product.name" type="text" size="10"> -->
             </td>
         </tr>
         <tr>
             <th>Quantity</th>
             <td>
-                <input [(ngModel)]="quantity" type="text" size="25">
+                <input [(ngModel)]="quantity" type="number" size="25">
             </td>
         </tr>
         <tr>

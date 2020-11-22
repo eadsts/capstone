@@ -28,8 +28,8 @@ export class RequestlineService {
   }
 
   //updates a request
-  change(requestlines: Requestline): Observable<any> {
-    return this.http.put(`${baseurl}/${requestlines.id}`, requestlines) as Observable<any>;
+  change(requestline: Requestline): Observable<any> {
+    return this.http.put(`${baseurl}/${requestline.id}`, requestline) as Observable<any>;
   }
 
   //deletes a request

@@ -52,6 +52,10 @@ export class RequestLinesComponent implements OnInit {
     request.username = `${request.user.lastName}, ${request.user.firstName}`;
   }
 
+  // total(): void {
+  //   this.request.total = this.requestline.quantity*this.product.price;
+  // }
+
   remove(line: Requestline): void {
     console.debug(`Deleting line id ${line.id}`);
     line.product = null;
