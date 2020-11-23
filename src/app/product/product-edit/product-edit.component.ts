@@ -27,6 +27,8 @@ export class ProductEditComponent implements OnInit {
   ) { }
 
   save(): void {
+    //turns vendorId from a string into a number using the + sign
+    this.product.vendorId = +this.product.vendorId;
     console.log(this.product);
     this.productsvc.change(this.product).subscribe(
       res => {
@@ -35,6 +37,8 @@ export class ProductEditComponent implements OnInit {
       },
       err => { console.error("Error editing user: ", err); }
     );
+      //change and subscribe function for vendor
+
   }
 
   ngOnInit(): void {

@@ -36,6 +36,7 @@ import { ReviewListComponent } from './request/review-list/review-list.component
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { ReviewItemComponent } from './request/review-item/review-item.component';
+import { ProductSearchPipe } from './product/product-search.pipe';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { ReviewItemComponent } from './request/review-item/review-item.component
     ReviewListComponent,
     RequestlineCreateComponent,
     RequestlineEditComponent,
-    ReviewItemComponent
+    ReviewItemComponent,
+    ProductSearchPipe
   ],
   imports: [
     BrowserModule,

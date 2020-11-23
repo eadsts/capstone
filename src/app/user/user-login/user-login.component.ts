@@ -36,7 +36,7 @@ export class UserLoginComponent implements OnInit {
       res => {console.log("login()...", res);
       this.user = res as User;
       this.sysSvc.loggedInUser = this.user;
-      this.router.navigateByUrl('/users/list')
+      this.router.navigateByUrl('/requests/list')
     },
     err => {
       console.log("error...", err);

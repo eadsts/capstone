@@ -27,7 +27,7 @@ import { ReviewListComponent } from './request/review-list/review-list.component
 import { ReviewItemComponent } from './request/review-item/review-item.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "", redirectTo: "/users/login", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
   { path: "users/login", component: UserLoginComponent },

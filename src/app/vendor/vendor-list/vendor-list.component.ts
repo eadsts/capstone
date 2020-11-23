@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
+import { SystemService } from 'src/app/core/system.service';
+import { User } from 'src/app/user/user.class';
 
 @Component({
   selector: 'app-vendor-list',
@@ -16,9 +18,11 @@ export class VendorListComponent implements OnInit {
   sortCriteria: string = "name";
   ascSequence: boolean = true;
   tableStyle: string = "table table-sm";
+  loggedInUser: User;
 
   constructor(
-    private vendorsvc: VendorService
+    private vendorsvc: VendorService,
+    private sysSvc: SystemService
   ) { }
 
   sortColumn(column: string): void {
@@ -31,6 +35,7 @@ export class VendorListComponent implements OnInit {
   }
 
 ngOnInit(): void {
+  this.loggedInUser = this.sysSvc.loggedInUser;
   this.vendorsvc.list().subscribe(
     res => { console.log(res);
     this.vendors = res as Vendor[];

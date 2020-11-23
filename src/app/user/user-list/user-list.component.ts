@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-user-list',
@@ -12,13 +13,15 @@ import { User } from '../user.class';
 export class UserListComponent implements OnInit {
 
     users: User[] = [];
+    loggedInUser: User;
     searchCriteria: string = "";
     sortCriteria: string = "lastName";
     ascSequence: boolean = true;
     tableStyle: string = "table table-sm";
     
   constructor(
-    private usersvc: UserService
+    private usersvc: UserService,
+    private sysSvc: SystemService
   ) { }
 
   //on click, pass in the column the user clicked on as a
@@ -38,6 +41,8 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loggedInUser = this.sysSvc.loggedInUser;
+    console.log("loggedInUser", this.loggedInUser);
     this.usersvc.list().subscribe(
       res => { console.log(res);
       this.users = res as User[];
