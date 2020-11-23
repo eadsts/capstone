@@ -37,7 +37,7 @@ export class ReviewListComponent implements OnInit {
       this.requestlinesvc.get(id).subscribe(
         res => {
           console.debug("Request lines to review:", res);
-          this.router.navigateByUrl("/requests/review-list");
+          this.router.navigateByUrl("/review/item");
         },
         err => { console.error("Error retrieving request lines: ", err); }
       );

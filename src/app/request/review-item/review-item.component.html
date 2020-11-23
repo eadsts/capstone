@@ -20,8 +20,8 @@ if hit reject, need a text box that has a reason for rejection -->
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.status}}</td>
-        <td>{{request.total}}</td>
-        <td>{{request.username}}</td>
+        <td>{{request.total | currency }}</td>
+        <td>{{request.user.username}}</td>
     </tr>
 </table>
 </div>
@@ -29,13 +29,14 @@ if hit reject, need a text box that has a reason for rejection -->
     <p></p>
 </div>
 <div>
-    <table *ngIf="request && request.requestLines" [ngClass]="tableStyle">
+    <!-- <table *ngIf="request && request.requestLines" [ngClass]="tableStyle"> -->
+        <table [ngClass]="tableStyle">
         <tr>
             <th>Id</th>
             <th>Product</th>
             <th>Quantity</th>
             <th>Price</th>
-            <!-- <th>LineTotal</th> -->
+            <th>LineTotal</th>
         </tr>
         <tr *ngFor="let line of request.requestLines">
            
@@ -43,7 +44,7 @@ if hit reject, need a text box that has a reason for rejection -->
             <td>{{line.product.name}}</td>
             <td>{{line.quantity}}</td>
             <td>{{line.product.price}}</td>
-            <!-- <td>{{line.total}}</td> -->
+            <td>{{line.product.price*line.quantity | currency}}</td>
         </tr> 
     </table>
 </div>

@@ -18,11 +18,10 @@
         <th>Name</th>
         <th>Price</th>
         <th>Unit</th>
-        <th>Image</th>
         <th>Actions</th>
     </tr>
     <tr *ngFor="let product of products">
-        <!--  | userSearch:searchCriteria| sort:sortCriteria:ascSequence -->
+        <!--  | userSearch:searchCriteria | sort:sortCriteria:ascSequence -->
         
         <td>{{product.id}}</td>
         <td>{{product.vendor.name}}</td>
@@ -30,7 +29,6 @@
         <td>{{product.name}}</td>
         <td>{{product.price | currency}}</td>
         <td>{{product.unit}}</td>
-        <td>{{product.photoPath }}</td>
         <td>
             <a routerLink ="/products/edit/{{product.id}}">Edit | </a>
             <a routerLink ="/products/detail/{{product.id}}">Details </a>

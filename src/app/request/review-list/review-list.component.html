@@ -17,10 +17,10 @@
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.status}}</td>
-        <td>{{request.total}}</td>
-        <td>{{request.username}}</td>
+        <td>{{request.total | currency }}</td>
+        <td>{{request.user.username}}</td>
         <td>
-            <a routerLink ="/requests/review-item/{{request.id}}">Review this</a>
+            <a routerLink ="/review/item/{{request.id}}">Review this</a>
         </td>
     </tr>
 </table>

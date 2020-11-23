@@ -43,7 +43,7 @@ export class RequestService {
 
   //gets all requests by primary key except if the user is trying to review their own request
   allRequestsForReview(id: number): Observable<Request[]> {
-    return this.http.get(`${baseurl}/review/${id}`) as Observable<Request[]>;
+    return this.http.get(`${baseurl}/reviews/${id}`) as Observable<Request[]>;
   }
 
   //if request <=50 ? approved : review

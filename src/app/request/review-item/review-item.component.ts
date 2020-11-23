@@ -33,8 +33,6 @@ export class ReviewItemComponent implements OnInit {
     );
   }
   
-  // The Approve button will call the approve(res) function causing the 
-  // status of the request to change to APPROVED
   approve(): void {
     this.requestsvc.approve(this.request.id, this.request).subscribe(
       res => { console.debug("Request to approve:", res);
@@ -44,12 +42,6 @@ export class ReviewItemComponent implements OnInit {
     );
   }
 
-
-  // The Reject button will call the reject(res) function causing the status of 
-  // the request to change to REJECTED. If a request is rejected, the reviewer is 
-  // REQUIRED to enter some text in the rejectionReason property. A textbox for this 
-  // data must be provided to the reviewer either displaying constantly on the page or 
-  // can be revealed dynamically when the Reject button is clicked.
   reject(): void {
     this.requestsvc.reject(this.request.id, this.request).subscribe(
       res => { console.debug("Request to reject:", res);
