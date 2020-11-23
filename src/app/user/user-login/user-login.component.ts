@@ -24,8 +24,8 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit(): void {
     //default username/password so we don't have to login everytime
-    this.username = "AAA";
-    this.password = "AA11";
+    this.username = "EEE";
+    this.password = "EE11";
     this.sysSvc.loggedInUser = null; //clear out logged in user
     
   }

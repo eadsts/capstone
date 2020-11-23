@@ -33,11 +33,11 @@
         <td>{{request.rejectionReason}}</td>
         <td>{{request.deliveryMode}}</td>
         <td>{{request.status}}</td>
-        <td>{{request.total}}</td>
+        <td>{{request.total | currency }}</td>
         <td>{{request.user.username}}</td>
         <td>
-            <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
             <a routerLink ="/requests/detail/{{request.id}}">Details | </a>
+            <a routerLink ="/requests/edit/{{request.id}}">Edit | </a>
             <a routerLink ="/requests/lines/{{request.id}}">Lines </a>
         </td>
     </tr>

@@ -45,6 +45,7 @@ export class ReviewListComponent implements OnInit {
 
   ngOnInit(): void {
     let userid = this.sysSvc.loggedInUser.id;
+    console.log("user id: ", userid);
     this.requestsvc.allRequestsForReview(userid).subscribe(
       res => {
         console.debug("All request lines", res);

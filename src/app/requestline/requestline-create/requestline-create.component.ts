@@ -30,7 +30,7 @@ export class RequestlineCreateComponent implements OnInit {
     this.requestline.productId = +this.requestline.productId;
     console.debug(this.requestline);
     this.requestlinesvc.create(this.requestline).subscribe(
-      res => { console.debug(res); this.router.navigateByUrl("/requests/lines/5");},
+      res => { console.debug(res); this.router.navigateByUrl(`/requests/lines/${this.requestline.requestId}`);},
       err => { console.error(err); }
     )
   }
