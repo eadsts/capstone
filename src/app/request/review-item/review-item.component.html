@@ -49,7 +49,7 @@ if hit reject, need a text box that has a reason for rejection -->
     </table>
 </div>
 <td>
-    <button (click) ="approve()">Approve</button>
-    <button (click) ="reject()">Reject</button>
-    <input [(ngModel)]="request.rejectionreason" value="text" size="35">
+    <button (click) ="approve()" class="btn btn-primary" style="background-color:mediumseagreen">Approve</button>
+    <button (click) ="reject()" class="btn btn-primary" style="background-color: red"> Reject </button>
+    <input [(ngModel)]="request.rejectionreason" value="text" placeholder="reason for rejection" size="35">
 </td>

@@ -1,8 +1,9 @@
 <app-menu></app-menu>
 <div class="h3">Vendor List
     <!-- placeholder puts the word search in the search box -->
-    <a *ngIf="loggedInUser.isAdmin" routerLink="/vendors/create">Create</a>
-    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="search vendors">
+    <a *ngIf="loggedInUser.isAdmin" routerLink="/vendors/create" class="btn btn-primary">Create New Vendor</a>
+   
 </div>
 
 <table *ngIf="vendors" [ngClass]="tableStyle">
@@ -30,8 +31,9 @@
         <td>{{vendor.phone}}</td>
         <td>{{vendor.email}}</td>
         <td>
-            <a *ngIf="loggedInUser.isAdmin" routerLink ="/vendors/edit/{{vendor.id}}">Edit | </a>
-            <a *ngIf="loggedInUser.isAdmin" routerLink ="/vendors/detail/{{vendor.id}}">Details </a>
+            <a *ngIf="loggedInUser.isAdmin" routerLink ="/vendors/detail/{{vendor.id}}">Details |</a>
+            <a *ngIf="loggedInUser.isAdmin" routerLink ="/vendors/edit/{{vendor.id}}"> Edit</a>
+           
         </td>
     </tr>
 </table>

@@ -1,8 +1,8 @@
 <app-menu></app-menu>
 <div class="h3">User List
-    <a *ngIf="loggedInUser.isAdmin" routerLink="/users/create">Create</a>
-     <!-- placeholder puts the word search in the search box -->
-    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="search users">
+
+    <a *ngIf="loggedInUser.isAdmin" routerLink="/users/create" class="btn btn-primary" >Create New User</a>
 </div>
 
 <table [ngClass]="tableStyle">
@@ -31,8 +31,9 @@
         <td>{{user.isReviewer }}</td>
         <td>{{user.isAdmin }}</td>
         <td>
-            <a *ngIf="loggedInUser.isAdmin" routerLink ="/users/edit/{{user.id}}">Edit | </a>
-            <a *ngIf="loggedInUser.isAdmin" routerLink ="/users/detail/{{user.id}}">Details </a>
+            <a *ngIf="loggedInUser.isAdmin" routerLink ="/users/detail/{{user.id}}">Details |</a>
+            <a *ngIf="loggedInUser.isAdmin" routerLink ="/users/edit/{{user.id}}"> Edit</a>
+            
         </td>
     </tr>
 </table>

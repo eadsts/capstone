@@ -1,8 +1,9 @@
 <app-menu></app-menu>
 <div class="h3">Product List
     <!-- placeholder puts the word search in the search box -->
-    <a *ngIf="loggedInUser.isAdmin" routerLink="/products/create">Create</a>
-    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="search products">
+    <a *ngIf="loggedInUser.isAdmin" routerLink="/products/create" class="btn btn-primary">Create New Product</a>
+    
 </div>
 
 <table [ngClass]="tableStyle">
@@ -23,8 +24,9 @@
         <td>{{product.price | currency}}</td>
         <td>{{product.unit}}</td>
         <td>
-            <a *ngIf="loggedInUser.isAdmin" routerLink ="/products/edit/{{product.id}}">Edit | </a>
-            <a *ngIf="loggedInUser.isAdmin" routerLink ="/products/detail/{{product.id}}">Details </a>
+            <a *ngIf="loggedInUser.isAdmin" routerLink ="/products/detail/{{product.id}}">Details |</a>
+            <a *ngIf="loggedInUser.isAdmin" routerLink ="/products/edit/{{product.id}}"> Edit</a>
+          
         </td>
     </tr>
 </table>

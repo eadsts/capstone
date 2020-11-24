@@ -47,10 +47,9 @@
             <td>{{line.product.price | currency}}</td>
             <td>{{line.product.price*line.quantity | currency}}</td>
             <td>
-                <a routerLink ="/requestlines/edit/{{line.id}}">Edit | </a>
-                <button (click) ="remove(line)" class="btn btn-link">Delete </button>
+                <a routerLink ="/requestlines/edit/{{line.id}}">Edit |</a>
+                <button (click) ="remove(line)" class="btn btn-link">Delete</button>
             </td>
         </tr>
-        
     </table>
 </div>
